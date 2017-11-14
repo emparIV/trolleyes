@@ -35,7 +35,7 @@ moduloPedido.controller('UsuarioXtipousuarioPList1Controller',
                 //---
                 $scope.status = null;
                 $scope.debugging = constantService.debugging();
-                $scope.url = $scope.ob + '/' + $scope.profile + '/' + $scope.op + '/' + $routeParams.id_usuario;
+                $scope.url = $scope.ob + '/' + $scope.profile + '/' + $scope.op + '/' + $routeParams.id_tipousuario;
                 //----
                 $scope.xob = "tipousuario";
                 $scope.xid = $routeParams.id_tipousuario;
@@ -56,7 +56,7 @@ moduloPedido.controller('UsuarioXtipousuarioPList1Controller',
                 $scope.visibles.login = true;
                 $scope.visibles.email = true;
                 $scope.visibles.fecha_nacimiento = false;
-                $scope.visibles.id_tipousuario = true;
+                $scope.visibles.id_tipousuario = false;
                 //--
                 $scope.filterString = [{'name': 'dni', 'longname': 'DNI'}, {'name': 'nombre', 'longname': 'Nombre'}, {'name': 'primer_apellido', 'longname': 'Primer apellido'}, {'name': 'segundo_apellido', 'longname': 'Segundo apellido'}, {'name': 'login', 'longname': 'Login'}];
                 $scope.filterNumber = [{'name': 'id', 'longname': 'Identificador'}];

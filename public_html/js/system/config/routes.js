@@ -57,6 +57,9 @@ trolleyes.config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/pedido/1/plistXusuario/:id_usuario/:page?/:rpp?', {templateUrl: 'js/app/pedido/1/Xusuario/plist.html', controller: 'PedidoXusuarioPList1Controller', resolve: {auth: authenticationAdministratorPromise}});
         //------------
         $routeProvider.when('/tipousuario/1/view/:id', {templateUrl: 'js/app/tipousuario/1/view.html', controller: 'TipoUsuarioView1Controller', resolve: {auth: authenticationAdministratorPromise}});
+        $routeProvider.when('/tipousuario/1/remove/:id', {templateUrl: 'js/app/tipousuario/1/remove.html', controller: 'TipoUsuarioRemove1Controller', resolve: {auth: authenticationAdministratorPromise}});
+        $routeProvider.when('/tipousuario/1/new/:id?', {templateUrl: 'js/app/tipousuario/1/new.html', controller: 'TipoUsuarioNew1Controller', resolve: {auth: authenticationAdministratorPromise}});
+        $routeProvider.when('/tipousuario/1/edit/:id', {templateUrl: 'js/app/tipousuario/1/edit.html', controller: 'TipoUsuarioEdit1Controller', resolve: {auth: authenticationAdministratorPromise}});
         $routeProvider.when('/tipousuario/1/plist/:page?/:rpp?', {templateUrl: 'js/app/tipousuario/1/plist.html', controller: 'TipoUsuarioPList1Controller', resolve: {auth: authenticationAdministratorPromise}});                
          //--
         $routeProvider.otherwise({redirectTo: '/'});
