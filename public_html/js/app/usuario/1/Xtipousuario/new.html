@@ -34,7 +34,7 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <header ob="ob" title="'Alta de ' + objectService.getName(ob) + ' por '  + objectService.getName(xob)"></header>                       
+                        <header ob="ob" title="'Alta de' + objectService.getName(ob)"></header>
                     </div>
                     <div class="panel-body">
                         <div class="alert alert-success" role="alert" ng-if="debugging">
@@ -60,49 +60,10 @@
                                 </div>
                             </div>
                             <!------------------------------------------------->
-                            <div class="form-group" id="fecha-group"
-                                 ng-class="{'has-error': (outerForm.fecha.$error.required ||
-                                             outerForm.fecha.$error.valid)
-                                             && !outerForm.fecha.$pristine}">
-                                <label class="control-label col-sm-2" for="fecha">
-                                    <span>*</span>Fecha
-                                </label>
-                                <div class="control col-sm-2">
-                                    <date-time-picker
-                                        name="'fecha'"
-                                        required="true"
-                                        model="bean.fecha"
-                                        form="outerForm">
-                                    </date-time-picker>
-                                    <span class="help-block" ng-if="!outerForm.fecha.$pristine && outerForm.fecha.$error.required">El campo es obligatorio</span>
-                                    <span class="help-block" ng-if="!outerForm.fecha.$pristine && outerForm.fecha.$error.valid">El campo no tiene formato adecuado: Debe ser una fecha y hora válidas</span>
-                                </div>
-                            </div>
-                            <!------------------------------------------------->
-                            <div class="form-group" id="obj_usuario-group"
-                                 ng-class="{'has-error': outerForm.obj_usuario.$error.exists}">
-                                <label class="control-label col-sm-2" for="obj_usuario">
-                                    * Usuario
-                                </label>
-                                <div class="col-md-4">
-                                    <foreign-key
-                                        bean="bean.obj_usuario"
-                                        form="outerForm"
-                                        name="'obj_usuario'"
-                                        reference="'usuario'"
-                                        profile="profile"
-                                        description="['nombre','primer_apellido','segundo_apellido']"
-                                        required="true">
-                                    </foreign-key>
-                                    <span class="help-block" ng-if="!outerForm.obj_usuario.$pristine && outerForm.obj_usuario.$error.required">El campo es obligatorio</span>
-                                    <span class="help-block" ng-if="!outerForm.obj_usuario.$pristine && outerForm.obj_usuario.$error.exists">El tipo de usuario no existe</span>
-                                </div>
-                            </div>
-                            <!------------------------------------------------->
-                            <div class="form-group" id="tiene_iva-group"
-                                 ng-class="{'has-error':(outerForm.tiene_iva.$error.pattern && !outerForm.tiene_iva.$pristine) ||
-                                             (outerForm.tiene_iva.$error.required && !outerForm.tiene_iva.$pristine)}">
-                                <label class="control-label col-sm-2" for="tiene_iva">
+                            <div class="form-group" id="dni-group"
+                                 ng-class="{'has-error':(outerForm.dni.$error.pattern && !outerForm.dni.$pristine) ||
+                                                     (outerForm.dni.$error.required && !outerForm.dni.$pristine)}">
+                                <label class="control-label col-sm-2" for="dni">
                                     <span ng-show="true">*</span>
                                     DNI
                                 </label>
@@ -117,14 +78,14 @@
                                            maxlength="9"
                                            ng-required="true"
                                            />
-                                    <span class="help-block" ng-if="!outerForm.tiene_iva.$pristine && outerForm.tiene_iva.$error.required">El campo es obligatorio</span>
-                                    <span class="help-block" ng-if="!outerForm.tiene_iva.$pristine && outerForm.tiene_iva.$error.pattern">El campo no tiene formato adecuado:</span>
+                                    <span class="help-block" ng-if="!outerForm.dni.$pristine && outerForm.dni.$error.required">El campo es obligatorio</span>
+                                    <span class="help-block" ng-if="!outerForm.dni.$pristine && outerForm.dni.$error.pattern">El campo no tiene formato adecuado: Introduzca un DNI de 8 digitos y una letra mayúscula.</span>
                                 </div>
                             </div>
                             <!------------------------------------------------->
                             <div class="form-group" id="nombre-group"
                                  ng-class="{'has-error':(outerForm.nombre.$error.pattern && !outerForm.nombre.$pristine) ||
-                                             (outerForm.nombre.$error.required && !outerForm.nombre.$pristine)}">
+                                                     (outerForm.nombre.$error.required && !outerForm.nombre.$pristine)}">
                                 <label class="control-label col-sm-2" for="nombre">
                                     <span ng-show="true">*</span>
                                     Nombre
@@ -147,7 +108,7 @@
                             <!------------------------------------------------->
                             <div class="form-group" id="primer_apellido-group"
                                  ng-class="{'has-error':(outerForm.primer_apellido.$error.pattern && !outerForm.primer_apellido.$pristine) ||
-                                             (outerForm.primer_apellido.$error.required && !outerForm.primer_apellido.$pristine)}">
+                                                     (outerForm.primer_apellido.$error.required && !outerForm.primer_apellido.$pristine)}">
                                 <label class="control-label col-sm-2" for="primer_apellido">
                                     <span ng-show="true">*</span>
                                     Primer Apellido
@@ -170,7 +131,7 @@
                             <!------------------------------------------------->
                             <div class="form-group" id="segundo_apellido-group"
                                  ng-class="{'has-error':(outerForm.segundo_apellido.$error.pattern && !outerForm.segundo_apellido.$pristine) ||
-                                             (outerForm.segundo_apellido.$error.required && !outerForm.segundo_apellido.$pristine)}">
+                                                     (outerForm.segundo_apellido.$error.required && !outerForm.segundo_apellido.$pristine)}">
                                 <label class="control-label col-sm-2" for="primer_apellido">
                                     <span ng-show="true">*</span>
                                     Segundo Apellido
@@ -193,7 +154,7 @@
                             <!------------------------------------------------->
                             <div class="form-group" id="login-group"
                                  ng-class="{'has-error':(outerForm.login.$error.pattern && !outerForm.login.$pristine) ||
-                                             (outerForm.login.$error.required && !outerForm.login.$pristine)}">
+                                                     (outerForm.login.$error.required && !outerForm.login.$pristine)}">
                                 <label class="control-label col-sm-2" for="login">
                                     <span ng-show="true">*</span>
                                     Login
@@ -216,7 +177,7 @@
                             <!------------------------------------------------->
                             <div class="form-group" id="email-group"
                                  ng-class="{'has-error':(outerForm.email.$error.pattern && !outerForm.email.$pristine) ||
-                                             (outerForm.email.$error.required && !outerForm.email.$pristine)}">
+                                                     (outerForm.email.$error.required && !outerForm.email.$pristine)}">
                                 <label class="control-label col-sm-2" for="email">
                                     <span ng-show="true">*</span>
                                     Email
@@ -233,11 +194,29 @@
                                            ng-required="true"
                                            />
                                     <span class="help-block" ng-if="!outerForm.email.$pristine && outerForm.email.$error.required">El campo es obligatorio</span>
-                                    <span class="help-block" ng-if="!outerForm.email.$pristine && outerForm.email.$error.pattern">El campo no tiene formato adecuado: {{getRegExpl('email')}}</span>
+                                    <span class="help-block" ng-if="!outerForm.email.$pristine && outerForm.email.$error.pattern">El campo no tiene formato adecuado: Debe ser un email</span>
                                 </div>
                             </div>
                             <!------------------------------------------------->
-
+                            <div class="form-group" id="fecha-group"
+                                 ng-class="{'has-error': (outerForm.fecha_nacimiento.$error.required ||
+                                                     outerForm.fecha_nacimiento.$error.valid)
+                                                     && !outerForm.fecha_nacimiento.$pristine}">
+                                <label class="control-label col-sm-2" for="fecha_nacimiento">
+                                    <span>*</span>Fecha de nacimiento
+                                </label>
+                                <div class="control col-sm-2">
+                                    <date-time-picker
+                                        name="'fecha_nacimiento'"
+                                        required="true"
+                                        model="bean.fecha_nacimiento"
+                                        form="outerForm">
+                                        </date-time-picker>
+                                    <span class="help-block" ng-if="!outerForm.fecha_nacimiento.$pristine && outerForm.fecha_nacimiento.$error.required">El campo es obligatorio</span>
+                                    <span class="help-block" ng-if="!outerForm.fecha_nacimiento.$pristine && outerForm.fecha_nacimiento.$error.valid">El campo no tiene formato adecuado: Debe ser una fecha y hora válidas</span>
+                                </div>
+                            </div>
+                            <!------------------------------------------------->
                             <div class="control-group text-right">                               
                                 <div class="controls">
                                     <a class="btn btn-primary" ng-click="save()" ng-disabled="!outerForm.$valid">Guardar</a>

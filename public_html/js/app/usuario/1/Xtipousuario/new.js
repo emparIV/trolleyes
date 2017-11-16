@@ -27,22 +27,22 @@
  */
 'use strict';
 
-moduloUsuario.controller('UsuarioNew1Controller',
+moduloUsuario.controller('UsuarioXtipousuarioNew1Controller',
         ['$scope', '$routeParams', '$location', 'serverCallService', '$filter', '$uibModal', 'sessionService', '$route', 'toolService', 'constantService', 'objectService',
             function ($scope, $routeParams, $location, serverCallService, $filter, $uibModal, sessionService, $route, toolService, constantService, objectService) {
-                $scope.ob = "pedido";
-                $scope.op = "newXusuario";
+                $scope.ob = "usuario";
+                $scope.op = "newXtipousuario";
                 $scope.profile = 1;
                 //---
                 $scope.status = null;
                 $scope.debugging = constantService.debugging();
-                //$scope.url = $scope.ob + '/' + $scope.profile + '/' + $scope.op;
+                $scope.url = $scope.ob + '/' + $scope.profile + '/' + $scope.op + '/' + $routeParams.id_tipousuario;
                 //---
-                $scope.xob = "usuario";
-                $scope.xid = $routeParams.id_usuario;
+                $scope.xob = "tipousuario";
+                $scope.xid = $routeParams.id_tipousuario;
                 //--
                 $scope.bean = {};
-                $scope.bean.obj_usuario = {"id": $scope.xid};
+                $scope.bean.obj_tipousuario = {"id": $scope.xid};
                 //---
                 $scope.objectService = objectService;
                 //---

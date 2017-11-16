@@ -27,7 +27,7 @@
  */
 'use strict';
 
-moduloUsuario.controller('UsuarioNew1Controller',
+moduloPedido.controller('PedidoXusuarioNew1Controller',
         ['$scope', '$routeParams', '$location', 'serverCallService', '$filter', '$uibModal', 'sessionService', '$route', 'toolService', 'constantService', 'objectService',
             function ($scope, $routeParams, $location, serverCallService, $filter, $uibModal, sessionService, $route, toolService, constantService, objectService) {
                 $scope.ob = "pedido";
@@ -36,7 +36,7 @@ moduloUsuario.controller('UsuarioNew1Controller',
                 //---
                 $scope.status = null;
                 $scope.debugging = constantService.debugging();
-                //$scope.url = $scope.ob + '/' + $scope.profile + '/' + $scope.op;
+                $scope.url = $scope.ob + '/' + $scope.profile + '/' + $scope.op + '/' + $routeParams.id_usuario;
                 //---
                 $scope.xob = "usuario";
                 $scope.xid = $routeParams.id_usuario;
