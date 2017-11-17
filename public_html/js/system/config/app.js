@@ -36,6 +36,7 @@ var trolleyes = angular.module('myApp', [
     'usuarioControllers',
     'tipousuarioControllers',
     'pedidoControllers',
+    'productoControllers',
     'ui.bootstrap',
     'ngSanitize',
     'chart.js'

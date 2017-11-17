@@ -65,5 +65,5 @@ trolleyes.config(['$routeProvider', function ($routeProvider) {
         //------------
         $routeProvider.when('/producto/2/plist/:page?/:rpp?', {templateUrl: 'js/app/producto/2/plist.html', controller: 'ProductoPList2Controller', resolve: {auth: authenticationClientPromise}});                
         //--
-        $routeProvider.otherwise({redirectTo: '/'});
+        $routeProvider.otherwise({redirectTo: '/'});    
     }]);
