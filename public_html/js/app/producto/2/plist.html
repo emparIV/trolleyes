@@ -172,16 +172,10 @@
                                         <div class="thumb"><img src="images/thumb.jpg" alt="" /></div>
                                         <div class="ref">ref: {{obj.codigo}}</div>
                                         <div class="prod_name"><b>{{obj.descripcion}}</b></div>
-                                        <div class="existencias">{{obj.existencias}}</div>
-                                        <div class="precio">{{obj.precio| currency : "€":2}}</div>
-
-                                        <div class="input-group spinner">
-                                            <input type="number" value="1" step="1" min="0" max="9999999999" name="cantidad" class="form-control" >
-                                            
-                                            <div class="input-group-btn-vertical">
-                                                <button class="btn btn-default" type="button" onclick=""><i class="fa fa-caret-up"></i></button>
-                                                <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
-                                            </div>
+                                        <div class="compra">
+                                            <div class="precio">{{obj.precio| currency : "€":2}}</div>
+                                            <input type="number" value="1" step="1" min="0" max="{{obj.existencias}}" name="cantidad" class="form-control number cantidad">
+                                            <button type="button" class="btn btn-success anyadir"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
                                         </div>
                                     </div>
                                     <a class="btn btn-default" href="home">Cerrar</a>
@@ -194,17 +188,6 @@
             </div>
         </div>
     </div>
-    
-<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js'></script>
-<script >(function ($) {
-  $('.spinner .btn:first-of-type').on('click', function() {
-    $('.spinner input').val( parseInt($('.spinner input').val(), 10) + 1);
-  });
-  $('.spinner .btn:last-of-type').on('click', function() {
-    $('.spinner input').val( parseInt($('.spinner input').val(), 10) - 1);
-  });
-})(jQuery);
-</script>
 
 
 
